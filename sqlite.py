@@ -8,7 +8,7 @@ prenom = ['ali', 'lounis', 'mokrane', 'amar']
 ville = ['Tizi-Ouzou', 'Bouzeguene', 'Irdjen', 'Azzazga', 'Yakourene', 'Tigzirt']
 nom = ['name1', 'name2', 'name3', 'name4']
 
-path2db="db/database.db"
+path2db="database.db"
 
 conn = sqlite3.connect(path2db)
 cur = conn.cursor()
