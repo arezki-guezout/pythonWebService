@@ -1,17 +1,10 @@
 pipeline {
-  agent { dockerfile true }
+  agent { dockerfile true 
+          args '-t pythonapp'
+        }
   stages {
-    stage('clone') {
+    stage('run') {
       steps {
-        sh 'git clone https://github.com/arezki-guezout/pythonWebService.git'
-        sh 'pwd'
-      }
-    }
-  
-    stage('build') {
-      steps {
-        sh 'docker rm app'
-        sh 'docker build ./pythonWebService -t pythonapp'
         sh 'docker run --name app -tid -p 8081:8081 pythonapp'
         sh 'docker ps'
       }
