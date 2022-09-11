@@ -4,7 +4,6 @@ pipeline {
     stage('clone') {
       steps {
         sh 'git clone https://github.com/arezki-guezout/pythonWebService.git'
-        sh 'chmod 751 pythonWebService/sqlite.py'
         sh 'pwd'
       }
     }
