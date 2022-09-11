@@ -1,0 +1,19 @@
+pipeline {
+agent {
+  dockerfile : true
+}
+stages {
+  stage('clone') {
+    steps {
+      sh 'git clone '
+      sh 'pwd'
+    }
+  }
+  
+  stage('build') {
+    steps {
+      sh 'docker build -ti --name app'
+    }
+  }
+}
+}
