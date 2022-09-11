@@ -1,7 +1,9 @@
 pipeline {
-  agent { dockerfile true 
-          args '-t pythonapp'
-        }
+  agent { 
+    dockerfile {
+      args '-t pythonapp'
+    }
+  }
   stages {
     stage('run') {
       steps {
