@@ -7,8 +7,10 @@ pipeline {
   stages {
     stage('run') {
       steps {
+        echo 'rrrr'
         sh 'docker run --name app -tid -p 8081:8081 pythonapp'
         sh 'docker ps'
+        echo 'uuuuu'
       }
     }
     
