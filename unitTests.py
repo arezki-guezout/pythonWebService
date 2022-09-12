@@ -7,7 +7,7 @@ import json
 class TestDB(unittest.TestCase):
 	
 	def test_age_18_50(self):
-		conn=sqlite3.connect("db/database.db")
+		conn=sqlite3.connect("database.db")
 		cur=conn.cursor()
 		cur.execute('select age from utilisateurs where age<18 or age>50')
 		#on vérifie que le nombre de personnes n'ayant pas entre 18 et 50 ans EST EGAL à 0
@@ -16,7 +16,7 @@ class TestDB(unittest.TestCase):
 		
 	def test_pas_communes_francaise(self):
 		cmn_fr=[]
-		conn=sqlite3.connect("db/database.db")
+		conn=sqlite3.connect("database.db")
 		cur=conn.cursor()
 		cur.execute('select distinct ville from utilisateurs')
 		rows=cur.fetchall()
