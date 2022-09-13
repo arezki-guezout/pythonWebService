@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent { 
+    dockerfile {
+      args '-t pythonapp'
+    }
+  }
+  //agent any
   stages {
     stage('run') {
       agent { dockerfile { reuseNode true } }
