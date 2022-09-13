@@ -1,17 +1,17 @@
 pipeline {
-  //agent { 
-    //dockerfile {
-      //args '-t pythonapp'
-    //}
-  //}
+  agent { 
+    dockerfile {
+      args '-t pythonapp'
+    }
+  }
   //agent any
-  agent { dockerfile true }
+  //agent { dockerfile true }
   stages {
     stage('run') {
-      //agent { dockerfile { reuseNode true } }
+      agent { dockerfile { reuseNode true } }
       steps {
         echo 'rrrr'
-        //sh 'docker run --name app -tid -p 8081:8081 pythonapp'
+        sh 'docker run --name app -tid -p 8081:8081 pythonapp'
         sh 'docker ps'
         echo 'uuuuu'
       }
