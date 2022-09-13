@@ -1,11 +1,11 @@
 pipeline {
-  agent { 
-    dockerfile {
-      args '-t pythonapp'
-    }
-  }
+  //agent { 
+    //dockerfile {
+      //args '-t pythonapp'
+    //}
+  //}
   //agent any
-  //agent { dockerfile true }
+  agent { dockerfile true }
   stages {
     //stage('run') {
       //agent { dockerfile { reuseNode true } }
