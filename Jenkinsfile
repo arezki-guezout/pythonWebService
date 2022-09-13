@@ -18,7 +18,7 @@ pipeline {
     //}
     
     stage('test') {
-      agent { dockerfile { reuseNode true } }
+      //agent { dockerfile { reuseNode true } }
       steps {
         //sh 'docker exec -tid app sh -c "python3 -m unittest unitTest.py"'
         sh 'python3 -m unittest unitTest.py'
