@@ -12,6 +12,7 @@ pipeline {
       
       //agent { dockerfile { reuseNode true } }
       steps {
+        sh 'pwd' 
       script{
       app=docker.build("pythonapp")
       app.inside{
@@ -19,7 +20,7 @@ pipeline {
       echo 'rrrr'}
       }
         
-        sh 'pwd' 
+        
         //sh 'docker run --name app -tid -p 8081:8081 pythonapp'
         //sh 'docker ps'
         //echo 'uuuuu'
