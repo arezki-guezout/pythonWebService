@@ -5,7 +5,7 @@ pipeline {
     //}
   //}
   //agent any
-  environment { app }
+  environment { app='' }
   agent { dockerfile true }
   stages {
     stage('run') {
@@ -14,11 +14,11 @@ pipeline {
       steps {
       script{
       app=docker.build("pythonapp")
-      
-      }
-        app.inside{
+      app.inside{
       sh 'pwd' 
       echo 'rrrr'}
+      }
+        
         sh 'pwd' 
         //sh 'docker run --name app -tid -p 8081:8081 pythonapp'
         //sh 'docker ps'
