@@ -5,7 +5,7 @@ pipeline {
     //}
   //}
   //agent any
-  environment { app='' }
+  script { def app }
   agent { dockerfile true }
   stages {
     stage('run') {
