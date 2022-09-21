@@ -5,9 +5,13 @@ pipeline {
     //}
   //}
   //agent any
+  def app
   agent { dockerfile true }
   stages {
-    //stage('run') {
+    stage('run') {
+      app=docker.build("pythonapp")
+      app.inside{
+      sh 'pwd' }
       //agent { dockerfile { reuseNode true } }
       //steps {
         //echo 'rrrr'
@@ -15,7 +19,7 @@ pipeline {
         //sh 'docker ps'
         //echo 'uuuuu'
       //}
-    //}
+    }
     
     stage('test') {
       //agent { dockerfile { reuseNode true } }
