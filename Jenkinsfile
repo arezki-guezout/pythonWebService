@@ -14,10 +14,11 @@ pipeline {
       steps {
       script{
       app=docker.build("pythonapp")
-      app.inside{
+      
+      }
+        app.inside{
       sh 'pwd' 
       echo 'rrrr'}
-      }
         sh 'pwd' 
         //sh 'docker run --name app -tid -p 8081:8081 pythonapp'
         //sh 'docker ps'
