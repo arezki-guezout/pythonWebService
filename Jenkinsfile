@@ -5,13 +5,15 @@ pipeline {
     //}
   //}
   //agent any
-  def app
+  denviroment { app='' }
   agent { dockerfile true }
   stages {
     stage('run') {
+      script{
       app=docker.build("pythonapp")
       app.inside{
       sh 'pwd' }
+      }
       //agent { dockerfile { reuseNode true } }
       //steps {
         //echo 'rrrr'
