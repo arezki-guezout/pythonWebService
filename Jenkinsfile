@@ -27,7 +27,7 @@ pipeline {
     
     stage('Test - run in local'){
       steps{
-        sh 'docker run -d --name ${JOB_NAME} -p 8081:8081 ${img}'
+        sh "docker run -d --name ${JOB_NAME} -p 8081:8081 ${img}"
       }
     }
     
